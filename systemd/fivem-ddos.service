@@ -1,2 +1,24 @@
 [Unit]
 Description=FiveM DDoS Detection Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/fivem-ddos-monitor.sh
+Restart=always
+RestartSec=5
+CPUQuota=10%
+MemoryMax=200M
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+CapabilityBoundingSet=CAP_NET_RAW CAP_NET_ADMIN
+AmbientCapabilities=CAP_NET_RAW CAP_NET_ADMIN
+StandardOutput=journal
+StandardError=journal
+OnFailure=fivem-ddos-failure@%n.service
+
+[Install]
+WantedBy=multi-user.target

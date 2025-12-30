@@ -1,2 +1,6 @@
 [Unit]
-Description=Failure Alert
+Description=FiveM DDoS Monitor Failure Alert
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fivem-ddos-failure-alert.sh
