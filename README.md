@@ -1,2 +1,7 @@
-# fivem-ddos-protection-suite
-Production-grade DDoS observation and alerting system for FiveM servers with player-aware detection and Discord notifications.
+# FiveM DDoS Protection Suite
+
+Observation & alerting system for FiveM servers.
+This tool detects suspicious UDP traffic and alerts admins via Discord.
+It does NOT directly block traffic.
+
+See docs/ for tuning and architecture.
